@@ -12,6 +12,7 @@ type Project = {
 export const site = {
   name: "Cesar Ivan Diaz Briseño",
   displayName: "Ivan Diaz",
+  displayNameKana: "イヴァン・ディアス",
   role: "Senior React Developer",
   headline: "React · Next.js · TypeScript",
   summary:

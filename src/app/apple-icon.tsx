@@ -11,20 +11,30 @@ export default function AppleIcon() {
           width: "100%",
           height: "100%",
           display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "center",
-          background: "#0b0a1e",
+          position: "relative",
+          background: "#f4f2ec",
         }}
       >
         <div
           style={{
-            display: "flex",
-            width: 116,
-            height: 92,
-            marginBottom: 30,
-            borderRadius: "58px 58px 8px 8px",
-            background:
-              "linear-gradient(180deg, #ffd36e 0%, #ff8a5c 30%, #ff3cac 62%, #7c3aed 100%)",
+            position: "absolute",
+            left: 40,
+            top: 40,
+            width: 84,
+            height: 84,
+            borderRadius: 9999,
+            background: "#0d0d10",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: 56,
+            top: 56,
+            width: 84,
+            height: 84,
+            borderRadius: 9999,
+            background: "#ff4d6d",
           }}
         />
       </div>

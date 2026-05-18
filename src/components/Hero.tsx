@@ -1,7 +1,6 @@
 import { site } from "@/content/site";
-import HeroBackdrop from "./HeroBackdrop";
+import Glitch from "./Glitch";
 import Portrait from "./Portrait";
-import Avatar from "./Avatar";
 
 export default function Hero() {
   const { hero } = site;
@@ -9,64 +8,64 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[92vh] items-center overflow-hidden"
+      className="relative mx-auto grid max-w-[1300px] items-center gap-[clamp(1.5rem,4vw,3.5rem)] px-[clamp(1rem,4vw,2.5rem)] pt-[clamp(2rem,6vh,4.5rem)] pb-[clamp(3rem,8vh,6rem)] lg:grid-cols-[minmax(0,1fr)_clamp(280px,34vw,440px)]"
     >
-      <HeroBackdrop />
+      <span
+        className="absolute left-[calc(clamp(1rem,4vw,2.5rem)-1.9rem)] top-1/2 hidden -translate-y-1/2 font-[family-name:var(--display)] text-[0.95rem] font-bold tracking-[0.42em] text-[var(--pink-ink)] [writing-mode:vertical-rl] xl:block"
+        aria-hidden="true"
+      >
+        {site.displayNameKana}
+      </span>
 
-      <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-28 pb-24 sm:pt-32 sm:pb-28 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
-        <div>
-          <div className="hero-line mb-6 lg:hidden [animation-delay:60ms]">
-            <Avatar />
-          </div>
+      <div>
+        <p className="mono mb-6 text-[var(--stone)]">
+          {site.role}{" "}
+          <b className="font-bold text-[var(--sumi)]">— 東京発信 / signal</b>
+        </p>
 
-          <p className="hero-line font-display text-sm font-semibold tracking-[0.28em] text-cyan [animation-delay:120ms]">
-            {hero.eyebrow.toUpperCase()}
-          </p>
+        <h1 className="slam-target font-[family-name:var(--display)] text-[clamp(3.4rem,11.5vw,9rem)] font-black uppercase leading-[0.88] tracking-[-0.01em] [text-wrap:balance]">
+          {hero.title.split(" ").map((word) => (
+            <span key={word} className="block">
+              <Glitch text={word} />
+            </span>
+          ))}
+        </h1>
 
-          <h1 className="hero-line mt-5 font-display text-5xl font-bold leading-[1.03] tracking-tight text-text sm:text-6xl xl:text-7xl [animation-delay:220ms]">
-            {hero.title}
-          </h1>
+        <p className="mono mt-6 text-[clamp(0.8rem,1.7vw,1rem)] tracking-[0.1em] text-[var(--pink-ink)]">
+          {site.headline}
+        </p>
 
-          <p className="hero-line mt-4 font-display text-xl font-semibold tracking-tight text-gradient sm:text-2xl [animation-delay:320ms]">
-            {site.headline}
-          </p>
+        <p className="mt-6 max-w-[32ch] text-[clamp(1rem,1.35vw,1.18rem)] text-[#35342f]">
+          I build and ship production web apps —{" "}
+          <span className="serif">fast</span>, and the way you&apos;d build them
+          yourself.
+        </p>
 
-          <p className="hero-line mt-6 max-w-xl text-lg leading-relaxed text-muted [animation-delay:440ms]">
-            {hero.tagline}
-          </p>
-
-          <div className="hero-line mt-9 flex flex-wrap gap-4 [animation-delay:560ms]">
-            <a
-              href={hero.primaryCta.href}
-              className="rounded-full bg-pink px-6 py-3 text-sm font-semibold text-white transition-all hover:shadow-[0_0_32px_-6px_var(--color-pink)] hover:brightness-110"
-            >
-              {hero.primaryCta.label}
-            </a>
-            <a
-              href={hero.secondaryCta.href}
-              className="rounded-full border border-border px-6 py-3 text-sm font-semibold text-text transition-colors hover:border-cyan hover:text-cyan"
-            >
-              {hero.secondaryCta.label}
-            </a>
-          </div>
-
-          <dl className="hero-line mt-12 flex flex-wrap gap-x-10 gap-y-4 [animation-delay:680ms]">
-            {site.stats.map((stat) => (
-              <div key={stat.label}>
-                <dt className="font-display text-2xl font-bold text-text">
-                  {stat.value}
-                </dt>
-                <dd className="mt-1 max-w-[10rem] text-xs leading-snug text-faint">
-                  {stat.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
+        <div className="mt-9 flex flex-wrap gap-3">
+          <a href={hero.primaryCta.href} className="btn btn-solid">
+            {hero.primaryCta.label}
+          </a>
+          <a href="#work" className="btn btn-ghost">
+            See the work →
+          </a>
         </div>
 
-        <div className="hidden lg:block">
-          <Portrait />
-        </div>
+        <dl className="mt-11 flex flex-wrap gap-8 border-t pt-6">
+          {site.stats.map((stat) => (
+            <div key={stat.label}>
+              <dt className="font-[family-name:var(--display)] text-[1.5rem] font-black">
+                {stat.value}
+              </dt>
+              <dd className="mono mt-1 max-w-[15ch] text-[0.58rem] tracking-[0.1em] text-[var(--stone)]">
+                {stat.label}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div className="order-first lg:order-none">
+        <Portrait />
       </div>
     </section>
   );

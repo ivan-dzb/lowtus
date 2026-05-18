@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
-import { Chakra_Petch, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
-
-const chakra = Chakra_Petch({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-chakra",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -24,7 +10,7 @@ export const metadata: Metadata = {
     title: `${site.displayName} — ${site.role}`,
     description: site.summary,
     url: site.url,
-    siteName: site.name,
+    siteName: site.displayName,
     type: "website",
   },
   twitter: {
@@ -38,7 +24,19 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${chakra.variable} ${inter.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho:wght@600;800&family=Space+Mono:wght@400;700&display=swap"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -1,33 +1,37 @@
 import { site } from "@/content/site";
+import Section from "./Section";
+import Glitch from "./Glitch";
 import Reveal from "./Reveal";
-import SectionHeading from "./SectionHeading";
 
 export default function Services() {
   return (
-    <section id="services" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-      <SectionHeading
-        index="01"
-        title="What I build for clients"
-        kicker="Scoped work you can hand off and trust to land — from a single feature to a full product."
-      />
+    <Section id="services" index="01" kanji="仕事" label="what I do" dark>
+      <h2 className="font-[family-name:var(--display)] text-[clamp(2.2rem,7vw,4.6rem)] font-black uppercase leading-[0.92] [text-wrap:balance]">
+        <Glitch text="Built to ship" />
+      </h2>
+      <p className="serif mt-5 max-w-[42ch] text-[clamp(1.05rem,1.6vw,1.35rem)] text-[#cfccc4]">
+        Frontend architecture that scales, features shipped end to end, and the
+        APIs behind them.
+      </p>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="mt-10 grid gap-[3px] bg-[var(--rule)] p-[3px] sm:grid-cols-2">
         {site.services.map((service, index) => (
           <Reveal
             key={service.title}
-            delay={index * 80}
-            className="group rounded-2xl border border-border bg-surface p-7 transition-colors hover:border-pink/50"
+            className="flex flex-col justify-between bg-[var(--sumi-2)] p-6"
           >
-            <div className="font-display text-sm font-semibold text-faint transition-colors group-hover:text-pink">
-              {String(index + 1).padStart(2, "0")}
+            <span className="mono text-[0.6rem] tracking-[0.16em] text-[var(--stone)]">
+              P.{String(index + 1).padStart(2, "0")}
+            </span>
+            <div className="mt-8">
+              <h3 className="font-[family-name:var(--display)] text-[1.35rem] font-bold">
+                {service.title}
+              </h3>
+              <p className="mt-2 text-[0.9rem] text-[#b7b4ac]">{service.body}</p>
             </div>
-            <h3 className="mt-3 font-display text-xl font-bold text-text">
-              {service.title}
-            </h3>
-            <p className="mt-3 leading-relaxed text-muted">{service.body}</p>
           </Reveal>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

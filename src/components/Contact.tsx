@@ -1,51 +1,40 @@
 import { site } from "@/content/site";
-import Reveal from "./Reveal";
-import SectionHeading from "./SectionHeading";
+import Section from "./Section";
+import Glitch from "./Glitch";
+
+const socials = [
+  { label: "Upwork", href: site.links.upwork },
+  { label: "LinkedIn", href: site.links.linkedin },
+  { label: "GitHub", href: site.links.github },
+];
 
 export default function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-      <SectionHeading index="05" title="Let's build something" />
+    <Section id="contact" index="05" kanji="連絡" label="get in touch" dark>
+      <h2 className="font-[family-name:var(--display)] text-[clamp(2.2rem,7vw,4.6rem)] font-black uppercase leading-[0.92] [text-wrap:balance]">
+        <Glitch text="Let's build" />
+      </h2>
+      <p className="mt-5 max-w-[46ch] text-[clamp(1rem,1.4vw,1.15rem)] text-[#cfccc4]">
+        {site.availability}. Send a short note about what you need built and I&apos;ll
+        get back to you.
+      </p>
 
-      <Reveal className="rounded-3xl border border-border bg-surface p-8 md:p-12">
-        <p className="max-w-xl text-lg leading-relaxed text-muted">
-          {site.availability}. Currently taking on freelance projects — send a
-          short note about what you need built and I&apos;ll get back to you.
-        </p>
-
-        <div className="mt-8 flex flex-wrap items-center gap-4">
+      <div className="mt-9 flex flex-wrap gap-3">
+        <a href={`mailto:${site.email}`} className="btn btn-solid">
+          {site.email}
+        </a>
+        {socials.map((social) => (
           <a
-            href={`mailto:${site.email}`}
-            className="rounded-full bg-pink px-6 py-3 text-sm font-semibold text-white transition-all hover:shadow-[0_0_32px_-6px_var(--color-pink)] hover:brightness-110"
-          >
-            {site.email}
-          </a>
-          <a
-            href={site.links.upwork}
+            key={social.label}
+            href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-border px-6 py-3 text-sm font-semibold text-text transition-colors hover:border-cyan hover:text-cyan"
+            className="btn btn-ghost"
           >
-            Upwork
+            {social.label}
           </a>
-          <a
-            href={site.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-border px-6 py-3 text-sm font-semibold text-text transition-colors hover:border-cyan hover:text-cyan"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={site.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-border px-6 py-3 text-sm font-semibold text-text transition-colors hover:border-cyan hover:text-cyan"
-          >
-            GitHub
-          </a>
-        </div>
-      </Reveal>
-    </section>
+        ))}
+      </div>
+    </Section>
   );
 }
