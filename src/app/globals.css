@@ -211,11 +211,18 @@ body:not(.loading) .slam-target {
 .reveal {
   opacity: 0;
   clip-path: inset(0 100% 0 0);
+  animation: reveal-failsafe 0s linear 4s forwards;
 }
 .reveal.shown {
   opacity: 1;
   clip-path: inset(0 0 0 0);
   transition: clip-path 0.5s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.01s;
+}
+@keyframes reveal-failsafe {
+  to { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+@media (scripting: none) {
+  .reveal { opacity: 1; clip-path: none; animation: none; }
 }
 
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
