@@ -1,4 +1,5 @@
 import { site } from "@/content/site";
+import Lotus from "./Lotus";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -26,9 +27,10 @@ export default function Nav() {
       <nav className="mx-auto flex max-w-[1300px] items-center justify-between gap-4 px-[clamp(1rem,4vw,2.5rem)] py-4">
         <a
           href="#top"
-          className="font-[family-name:var(--display)] text-[1.05rem] font-black tracking-tight"
+          className="flex items-center gap-2 font-[family-name:var(--display)] text-[1.05rem] font-black tracking-[0.02em]"
         >
-          IVAN<span className="text-[var(--pink-ink)]">.</span>
+          <Lotus className="h-[1.15em] w-[1.15em] text-[var(--pink-ink)]" />
+          LOWTUS
         </a>
 
         <ul className="mono hidden gap-6 md:flex">

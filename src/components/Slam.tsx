@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { site } from "@/content/site";
+import Lotus from "./Lotus";
 
 export default function Slam() {
   const [done, setDone] = useState(false);
@@ -26,7 +27,10 @@ export default function Slam() {
 
   return (
     <div className="slam" aria-hidden="true">
-      {site.displayNameKana.split("・")[0]}
+      <span className="flex items-center gap-[0.15em]">
+        <Lotus className="h-[0.9em] w-[0.9em]" />
+        LOWTUS
+      </span>
       <small>Loading — {site.displayName}</small>
     </div>
   );

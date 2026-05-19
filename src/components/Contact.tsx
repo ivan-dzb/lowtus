@@ -1,6 +1,7 @@
 import { site } from "@/content/site";
 import Section from "./Section";
 import Glitch from "./Glitch";
+import Lotus from "./Lotus";
 
 const socials = [
   { label: "Upwork", href: site.links.upwork },
@@ -10,7 +11,16 @@ const socials = [
 
 export default function Contact() {
   return (
-    <Section id="contact" index="05" kanji="連絡" label="get in touch" dark>
+    <Section
+      id="contact"
+      index="05"
+      kanji="連絡"
+      label="get in touch"
+      dark
+      decoration={
+        <Lotus className="pointer-events-none absolute -bottom-[8%] -right-[4%] h-[clamp(260px,42vw,560px)] w-[clamp(260px,42vw,560px)] text-[var(--pink)] opacity-[0.09]" />
+      }
+    >
       <h2 className="font-[family-name:var(--display)] text-[clamp(2.2rem,7vw,4.6rem)] font-black uppercase leading-[0.92] [text-wrap:balance]">
         <Glitch text="Let's build" />
       </h2>
