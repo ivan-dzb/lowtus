@@ -1,4 +1,5 @@
 import { site } from "@/content/site";
+import Lotus from "./Lotus";
 
 export default function Portrait() {
   const pic: React.CSSProperties = site.portrait
@@ -12,10 +13,11 @@ export default function Portrait() {
 
   return (
     <div className="slam-target relative grid place-items-center">
-      <div
-        className="absolute aspect-square w-[clamp(220px,30vw,380px)] rounded-full bg-[var(--pink)]"
-        style={{ transform: "translate(14%, -8%)" }}
+      <Lotus
+        className="pointer-events-none absolute w-[clamp(320px,44vw,520px)] text-[var(--pink)]"
+        style={{ transform: "translateY(-27%)" }}
       />
+
 
       <div className="relative aspect-[4/5] w-[clamp(210px,28vw,330px)] overflow-hidden rounded-[5px] border-[1.5px] border-[color:var(--sumi)] bg-[var(--sumi)] [isolation:isolate]">
         <div className="absolute inset-0" style={pic} />

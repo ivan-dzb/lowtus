@@ -15,15 +15,18 @@ export const lotusGroup = { petals, pads };
 
 export default function Lotus({
   className = "",
+  style,
   title,
 }: {
   className?: string;
+  style?: React.CSSProperties;
   title?: string;
 }) {
   return (
     <svg
       viewBox="0 0 100 100"
       className={className}
+      style={style}
       fill="currentColor"
       role={title ? "img" : undefined}
       aria-hidden={title ? undefined : true}
