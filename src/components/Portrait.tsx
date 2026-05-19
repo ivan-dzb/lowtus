@@ -14,8 +14,8 @@ export default function Portrait() {
   return (
     <div className="slam-target relative grid place-items-center">
       <Lotus
-        className="pointer-events-none absolute w-[clamp(320px,44vw,520px)] text-[var(--pink)]"
-        style={{ transform: "translateY(-27%)" }}
+        className="pointer-events-none absolute w-[clamp(300px,42vw,500px)] text-[var(--pink)]"
+        style={{ transform: "translate(13%, -28%)" }}
       />
 
 

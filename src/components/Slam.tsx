@@ -27,9 +27,9 @@ export default function Slam() {
 
   return (
     <div className="slam" aria-hidden="true">
-      <span className="flex items-center gap-[0.15em]">
-        <Lotus className="h-[0.9em] w-[0.9em]" />
-        LOWTUS
+      <span className="flex items-center gap-[0.2em]">
+        <Lotus className="h-[0.8em] w-[0.8em]" />
+        ロータス
       </span>
       <small>Loading — {site.displayName}</small>
     </div>
