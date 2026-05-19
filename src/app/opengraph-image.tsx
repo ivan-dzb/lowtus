@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { site } from "@/content/site";
+import { lotusGroup } from "@/components/Lotus";
 
 export const alt = `${site.displayName} — ${site.role}`;
 export const size = { width: 1200, height: 630 };
@@ -44,9 +45,9 @@ export default function Image() {
           style={{
             position: "absolute",
             right: -120,
-            top: 90,
-            width: 460,
-            height: 460,
+            top: 85,
+            width: 470,
+            height: 470,
             borderRadius: 9999,
             background: "#ff4d6d",
           }}
@@ -96,7 +97,26 @@ export default function Image() {
           >
             {site.headline}
           </div>
-          <div style={{ color: "#8b867d", fontSize: 22, marginTop: 44 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              color: "#8b867d",
+              fontSize: 22,
+              marginTop: 44,
+            }}
+          >
+            <svg width={26} height={26} viewBox="0 0 100 100" fill="#d81f4a">
+              <g transform="translate(50 66)">
+                {lotusGroup.pads.map((d) => (
+                  <path key={d} d={d} />
+                ))}
+                {lotusGroup.petals.map((p) => (
+                  <path key={p.r} transform={`rotate(${p.r})`} d={p.d} />
+                ))}
+              </g>
+            </svg>
             lowtus.me
           </div>
         </div>
