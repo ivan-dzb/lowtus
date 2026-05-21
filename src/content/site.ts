@@ -16,13 +16,14 @@ export const site = {
   role: "Senior React Developer",
   headline: "React · Next.js · TypeScript",
   summary:
-    "Senior React developer with 5+ years building and scaling production web apps with React, Next.js and TypeScript — frontend architecture, state management, performance, and the APIs behind it.",
+    "Senior React developer, 5+ years building and scaling production web apps with React, Next.js and TypeScript. Frontend architecture, state management, performance, and developer experience.",
   url: "https://lowtus.me",
   email: "ivan@lowtus.me",
   portrait: "/portrait.jpg" as string | null,
   location: "Guadalajara, Mexico",
   timezone: "GMT-6",
   availability: "Available for part-time freelance — evenings & weekends",
+  education: "B.S. Computer Engineering — UNIVA, Guadalajara",
 
   links: {
     upwork: "https://www.upwork.com/freelancers/~0144dc64b006ebd08a",
@@ -32,15 +33,15 @@ export const site = {
 
   stats: [
     { value: "5+ yrs", label: "React & TypeScript in production" },
-    { value: "−30%", label: "faster after legacy rebuilds" },
-    { value: "4", label: "product teams shipped for" },
+    { value: "−30%", label: "faster after a legacy frontend rebuild" },
+    { value: "6K+", label: "users on the platform I ship" },
   ],
 
   hero: {
     eyebrow: "Senior React Developer",
     title: "Ivan Diaz",
     tagline:
-      "I build and scale production web apps with React, Next.js and TypeScript — from frontend architecture to the APIs behind them.",
+      "I build and ship production web apps — fast, and the way you'd build them yourself.",
     primaryCta: { label: "Hire me on Upwork", href: "#contact" },
     secondaryCta: { label: "What I do", href: "#services" },
   },
@@ -52,11 +53,11 @@ export const site = {
     },
     {
       title: "Feature Development",
-      body: "Ship new features into your existing React or .NET app, from design through deployment, without breaking what already works.",
+      body: "Ship new features into your existing React or Next.js app, from design through deployment, without breaking what already works.",
     },
     {
       title: "Performance & Modernization",
-      body: "Refactor a slow or dated frontend into something fast and maintainable — past projects cut load times by 15–30%.",
+      body: "Refactor a slow or dated frontend into something fast and maintainable — past rebuilds cut load times by 15–30%.",
     },
     {
       title: "APIs & Integration",
@@ -83,28 +84,28 @@ export const site = {
       title: "Fullstack Developer L3",
       period: "Oct 2024 — Present",
       blurb:
-        "Build React/Next.js apps and REST APIs for an enterprise platform connecting vendors and carriers. Led a legacy frontend modernization that cut load times by 30%, and designed the global state layer with Zustand.",
+        "Build and ship React/Next.js features for an enterprise vendor-carrier logistics platform serving ~6,000 users. Led a full frontend modernization that cut load times 30%, designed the global state layer with Zustand, and drive code quality through reviews and testing.",
     },
     {
       company: "Brightcove",
       title: "Software Engineer",
       period: "Sep 2022 — Aug 2024",
       blurb:
-        "Shipped features and critical fixes for a high-traffic React/TypeScript streaming service. Maintained AWS infrastructure (S3, IAM) and refactored legacy code to cut load times by 15%.",
+        "Built and maintained the React / TypeScript / Redux web client of a multi-platform streaming CMS. Shipped features, fixed critical bugs, and refactored legacy code to cut load times 15%.",
     },
     {
       company: "Tech Mahindra",
       title: "Software Developer",
       period: "Sep 2021 — Sep 2022",
       blurb:
-        "Front-end consultant building a React/Redux/TypeScript SPA with production support, responsive design and a reusable component library that reduced duplication.",
+        "Front-end consultant building a React / Redux / TypeScript SPA with production support, responsive design, and a reusable component library that cut duplication.",
     },
     {
       company: "Infobip",
       title: "Fullstack Developer",
       period: "Feb 2021 — Sep 2021",
       blurb:
-        "Designed a new UI for a billing system and built a RESTful API for secure data transfer, improving the finance team's efficiency.",
+        "Designed a new UI for a billing system that improved the finance team's efficiency, and built a RESTful API for secure data transfer.",
     },
   ] satisfies Job[],
 

@@ -35,6 +35,10 @@ export default function Experience() {
           </Reveal>
         ))}
       </ol>
+
+      <Reveal className="mono mt-8 border-t pt-5 text-[0.62rem] tracking-[0.14em] text-[var(--stone)]">
+        Education — {site.education}
+      </Reveal>
     </Section>
   );
 }
